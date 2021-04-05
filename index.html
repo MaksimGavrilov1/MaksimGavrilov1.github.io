@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Film Library</title>
+    <script src="onunload.js"></script>
+</head>
+<body onload="load()">
+    <main id="main">
+        <div class="header">
+        
+            <p>ТВОЯ БИБЛИОТЕКА ФИЛЬМОВ!</p>
+        
+        </div>
+        <div class="main__form">
+            <h2>Добавьте свой фильм в нашу коллекцию!</h2>
+        </br>
+            <form  name="films" method="POST" enctype="multipart/form-data" onsubmit="return false;">
+                <legend>Название фильма</legend>
+                <input type="text" size="30" name="name" required>
+                <legend>Страна</legend>
+                <input type="text" size="30" name="country" required pattern="[A-Za-zА-Яа-яЁё_ ]{0,1000}">
+                <legend>Жанр</legend>
+                <input type="text" size="30" name="genre" required pattern="[A-Za-zА-Яа-яЁё_ ,]{0,1000}">
+                <legend>Режиссер(необходимо ввести через запятую, если несколько)</legend>
+                <input type="text" size="30" name="rej" required pattern="[A-Za-zА-Яа-яЁё_ ,]{0,1000}">
+                <legend>Сценарий</legend>
+                <input type="text" size="30" name="scen" required>
+                <legend>Продюсер</legend>
+                <input type="text" size="30" name="prod" required pattern="[A-Za-zА-Яа-яЁё_ ,]{0,1000}">
+                <legend>Оператор</legend>
+                <input type="text" size="30" name="oper" required pattern="[A-Za-zА-Яа-яЁё_ ,]{0,1000}">
+                <legend>Композитор</legend>
+                <input type="text" size="30" name="comp" required pattern="[A-Za-zА-Яа-яЁё_ ,]{0,1000}">
+                <legend>Бюджет</legend>
+                <input type="number" size="30" name="budj" required min="0.01" step="0.01">
+                <legend>Мировые сборы</legend>
+                <input type="number" size="30" name="cash" required min="0.01" step="0.01">
+                <legend>Рейтинг возраста</legend>
+                <input type="number" size="30" name="age" required min="0" max="21">
+                <legend>Длительность</legend>
+                <input type="time" size="10" name="time" min="00:10" max="04:00" required>
+                
+                <legend>Дата выхода</legend>
+                <input type="date" size="30" name="date" pattern="[0-9]{2}\.[0-9]{2}\.[0-9]{4}" required>
+                <legend>Постер(вставьте ссылку на необходимое изображение)</legend>
+                <input type="text" size="30" name="img" required>
+                <input type="submit" name="" id="">
+            </form>
+        </div>
+        <div id="filter">
+            <h1>Фильтрация</h1>
+            <div id="filter_content">
+                <div class="element">
+            <label for="filter_select_country">Страна</label>
+            <select name="filter" id="filter_select_country" multiple="true" size="3">
+                
+                <option value="США" >США</option>
+                <option value="СССР" >СССР</option>
+                <option value="Россия" >Россия</option>
+                <option value="Италия" >Италия</option>
+                <option value="Япония" >Япония</option>
+                
+            </select>
+            
+            </div>
+            <br>
+            <div class="element">
+            <label for="filter_select_genre">Жанр</label>
+            <select name="filter" id="filter_select_genre" multiple="true" size="3">
+                
+                <option value="ужасы" >ужасы</option>
+                <option value="драма" >драма</option>
+                <option value="мультфильм" >мультфильм</option>
+                <option value="комедия" >комедия</option>
+                <option value="боевик" >боевик</option>
+                <option value="криминал" >криминал</option>
+                <option value="военный" >военный</option>
+                <option value="аниме" >аниме</option>
+                
+                
+            </select>
+            
+            </div>
+            <br>
+            <div class="element">
+            <label for="filter_select_year">Год</label>
+            <select name="filter" id="filter_select_year" multiple="true" size="3">
+                
+                <option value="1990">1990</option>
+                <option value="1994">1994</option>
+                <option value="1971">1971</option>
+                <option value="1997">1997</option>
+                <option value="2016">2016</option>
+                
+            </select>
+            
+            </div>
+            <button id="filter_button" onclick="filter()">Найти</button>
+        </div>
+        </div>
+        <div id="films_list">
+
+        </div>
+        
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

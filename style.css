@@ -1,0 +1,108 @@
+* {
+    margin:0;
+    padding: 0;
+}
+
+.header {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    background-color: rgba(224, 156, 28, 0.829);
+   
+    font-weight: bolder;
+    
+}
+
+.main__form {
+    margin: 20px;
+    align-content: center;
+    background-color: rgba(128, 128, 128, 0.144);
+    text-align: center;
+    padding: 5px;
+    width: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 30px;
+}
+#name {
+    text-align: center;
+}
+
+#films_list {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    line-height: 2em;
+}
+
+.poster-img {
+        
+        width: 300px;
+        height: 300px;
+        text-align:center;
+     
+}
+.del_but {
+    background-color:rgba(224, 156, 28, 0.829);
+    
+    padding: 2px;
+}
+.poster-img img {
+    width:auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.card {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    width: 300px;
+    margin:10px;
+    height: fit-content;
+    background-color: rgba(102, 100, 100, 0.116);
+    word-break: break-all;
+}
+
+#filter {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: khaki;
+    height:fit-content;
+    text-align: center;
+    padding-bottom: 20px;
+    
+    align-self: center;
+}
+#filter_content {
+    margin-top: 10px;
+    display: flex;
+    justify-content:space-around;
+    flex-direction: column;
+    width: fit-content;
+    align-items: center;
+
+    width: 100%;
+} 
+#filter_content label {
+    padding-right: 50px;
+}
+.element {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: row;
+    
+}
+#filter_button {
+    margin: 10px;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: rgba(224, 156, 28, 0.829);
+    
+}
